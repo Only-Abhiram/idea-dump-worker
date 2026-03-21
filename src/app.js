@@ -9,5 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/problems", problemRoutes);
-
+app.get("/", (req, res)=>{
+    res.json({"Bot":"Hi there"});
+})
 module.exports = app;

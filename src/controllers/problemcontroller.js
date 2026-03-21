@@ -38,12 +38,14 @@ exports.createProblem = async (req, res) => {
 
 exports.getApprovedProblems = async (req, res) => {
   try {
+    console.log("tried pulling");
     const problems = await Problem.find({ status: "approved" })
       .sort({ createdAt: -1 })
       .limit(50);
-
+      console.log("pull success");
     res.json(problems);
   } catch (err) {
+    console.log("pull failed");
     res.status(500).json({ error: err.message });
   }
 };

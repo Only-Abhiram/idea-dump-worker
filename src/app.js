@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.use("/api/problems", problemRoutes);
 app.get("/", (req, res)=>{
-    res.json({"Bot":"Hi there"});
+    res.send(process.env.GEMINI_API_KEY+process.env.MONGO_URI);
+    
 })
 module.exports = app;

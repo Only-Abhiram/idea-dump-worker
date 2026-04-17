@@ -10,6 +10,6 @@ app.use(express.json());
 
 app.use("/api/problems", problemRoutes);
 app.get('/ping', (req, res)=>{
-    res.status(200).send("All okay!");
+    res.status(200).send("All okay! hi there");
 })
 module.exports = app;
